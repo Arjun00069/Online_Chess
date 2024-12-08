@@ -176,7 +176,11 @@ function isValid(
 
   return false;
 }
+function check_for_white(board:string[][],posx:number,posy:number){
+// given position of king and queen check in all eight direction if tere are piece which can capture king
+// if there then can king move to save himself
 
+}
 
 class chess {
   public user1_dead_pieces: string[];
