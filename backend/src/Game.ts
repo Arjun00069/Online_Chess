@@ -177,6 +177,7 @@ function isValid(
   return false;
 }
 
+
 class chess {
   public user1_dead_pieces: string[];
   public user2_dead_pieces: string[];
@@ -262,6 +263,19 @@ class chess {
         this.board[srcx][srcy] = "";
       }
     }
+  }
+  public isFinished(type:string){
+
+   switch (type) {
+    case GAMECOLOR[0%2]:
+        // check if finished for black or not
+        break;
+    case GAMECOLOR[1%2]:
+     // chec if finished for white or not
+
+        break;
+    
+   }
   }
 }
 

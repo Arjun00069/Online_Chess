@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
 import { Game } from "./Game"
 import { WebSocket } from 'ws';
-import { INIT_GAME, MOVE, PAWNMOVE } from './Constants';
+import { GAMECOLOR, INIT_GAME, MOVE, PAWNMOVE } from './Constants';
 export class User{
 public name:string|undefined;
 public socket:WebSocket;
@@ -54,6 +54,9 @@ private addHandler(user:User){
     else if (type===MOVE){
    // normal move not pown move
    // check which user is making move user1 or user 2(i.e white or black)
+   const current_game = this.game.filter(game=>game.user1_id===user.userId||game.user2_id===user.userId)[0];
+   const user_color:string = current_game.user1_id===user.userId? GAMECOLOR[0%2]:GAMECOLOR[1%2];
+    //   current_game.board.makeMove()
     // make move
     // check for check mate
     // give result to clinet
